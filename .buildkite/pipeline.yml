@@ -1,36 +1,6 @@
 steps:
-  - name: Test 1
-    command: echo $(ls /app)
-    plugins:
-      docker-compose#v2.4.0:
-        run: app
-        workdir: /app
-
-
-  - name: Test 3
-    command: pwd
-    plugins:
-      docker-compose#v2.4.0:
-        verbose: true
-        run: app
-        workdir: /app
-        volumes:
-          - ./:/app
-
-  - name: Test 2
-    command: echo $(ls)
-    plugins:
-      docker-compose#v2.4.0:
-        verbose: true
-        run: app
-        workdir: /app
-        volumes:
-          - ./:/app
-
   - name: Dotnet restore
-    command: 
-      - echo $(ls)
-      - dotnet restore src/WebHello/WebHello.fsproj
+    command: dotnet restore src/WebHello/WebHello.fsproj
     plugins:
       docker-compose#v2.4.0:
         run: app
