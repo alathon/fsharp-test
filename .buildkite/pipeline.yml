@@ -1,4 +1,9 @@
 steps:
+  - name: Test
+    command: cat src/WebHello/WebHello.fsproj
+
+  - wait
+
   - name: Dotnet restore
     command: dotnet restore /app/src/WebHello/WebHello.fsproj
     plugins:
