@@ -1,7 +1,6 @@
 steps:
   - name: Test
     command: cat /app/src/WebHello/WebHello.fsproj
-    workdir: /app
     plugins:
       docker-compose#v2.4.0:
         run: app
@@ -10,7 +9,6 @@ steps:
 
   - name: Dotnet restore
     command: dotnet restore /app/src/WebHello/WebHello.fsproj
-    workdir: /app
     plugins:
       docker-compose#v2.4.0:
         run: app
