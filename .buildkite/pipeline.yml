@@ -7,3 +7,27 @@ steps:
         workdir: /app
         volumes:
           - ./:/app
+  - name: Test
+    command: echo $(ls)
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
+        workdir: /app
+        volumes:
+          - ./:/app
+  - name: Test 2
+    command: echo $(ls /app)
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
+        workdir: /app
+        volumes:
+          - ./:/app
+  - name: Test 3
+    command: echo $(ls /app/src/WebHello)
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
+        workdir: /app
+        volumes:
+          - ./:/app
