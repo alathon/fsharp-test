@@ -1,6 +1,6 @@
 steps:
   - name: Test 1
-    command: ls /app
+    command: echo $(ls /app)
     plugins:
       docker-compose#v2.4.0:
         run: app
@@ -18,7 +18,7 @@ steps:
           - ./:/app
 
   - name: Test 2
-    command: echo '$(ls)'
+    command: echo $(ls)
     plugins:
       docker-compose#v2.4.0:
         verbose: true
