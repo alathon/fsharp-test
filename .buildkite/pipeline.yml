@@ -1,6 +1,9 @@
 steps:
   - name: Test
     command: cat src/WebHello/WebHello.fsproj
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
 
   - wait
 
