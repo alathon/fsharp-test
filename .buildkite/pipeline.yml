@@ -1,7 +1,6 @@
 steps:
-  - label: :llama: Dotnet restore
+  - name: Dotnet restore
     command: dotnet restore src/WebHello/WebHello.fsproj
     plugins:
-      docker#v1.2.1:
-        image: "microsoft/dotnet:2.0-sdk"
-        workdir: /app
+      docker-compose#v2.4.0:
+        run: app
