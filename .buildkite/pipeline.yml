@@ -2,7 +2,7 @@ steps:
   - name: Test
     command: cat /app/src/WebHello/WebHello.fsproj
     plugins:
-      docker#1.2.1:
+      docker#v1.2.1:
         image: microsoft/dotnet:2.0-sdk
         workdir: /app
         mounts:
