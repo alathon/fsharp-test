@@ -1,6 +1,6 @@
 steps:
   - name: Dotnet restore
-    command: dotnet restore src/WebHello/WebHello.fsproj
+    command: dotnet restore /app/src/WebHello/WebHello.fsproj
     plugins:
       docker-compose#v2.4.0:
         run: app
