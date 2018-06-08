@@ -7,5 +7,5 @@ RUN dotnet publish src/WebHello/WebHello.fsproj -o out -c Release --no-restore
 FROM microsoft/dotnet:2.0-runtime
 WORKDIR /app
 COPY --from=BUILD /build/src/WebHello/out .
-EXPOSE 8083
+EXPOSE 8888
 ENTRYPOINT dotnet /app/WebHello.dll
