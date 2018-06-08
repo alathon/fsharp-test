@@ -28,9 +28,12 @@ steps:
           - ./:/app
 
   - name: Dotnet restore
-    command: dotnet restore src/WebHello/WebHello.fsproj
+    command: 
+      - echo $(ls)
+      - dotnet restore src/WebHello/WebHello.fsproj
     plugins:
       docker-compose#v2.4.0:
-        verbose: true
         run: app
         workdir: /app
+        volumes:
+          - ./:/app
