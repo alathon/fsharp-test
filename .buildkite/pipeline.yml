@@ -1,6 +1,6 @@
 steps:
   - name: Test
-    command: cat .
+    command: ls
     plugins:
       docker#v1.2.1:
         image: microsoft/dotnet:2.0-sdk
