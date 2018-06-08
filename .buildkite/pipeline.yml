@@ -1,13 +1,24 @@
 steps:
   - name: Test 1
-    command: ls .
+    command: ls /app
     plugins:
       docker-compose#v2.4.0:
         run: app
         workdir: /app
 
+
+  - name: Test 3
+    command: pwd
+    plugins:
+      docker-compose#v2.4.0:
+        verbose: true
+        run: app
+        workdir: /app
+        volumes:
+          - .:/app
+
   - name: Test 2
-    command: ls .
+    command: echo '$(ls)'
     plugins:
       docker-compose#v2.4.0:
         verbose: true
