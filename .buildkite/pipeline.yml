@@ -15,7 +15,7 @@ steps:
         run: app
         workdir: /app
         volumes:
-          - .:/app
+          - ./:/app
 
   - name: Test 2
     command: echo '$(ls)'
@@ -25,7 +25,7 @@ steps:
         run: app
         workdir: /app
         volumes:
-          - .:/app
+          - ./:/app
 
   - name: Dotnet restore
     command: dotnet restore src/WebHello/WebHello.fsproj

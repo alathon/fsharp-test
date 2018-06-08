@@ -4,4 +4,4 @@ services:
   app:
     image: microsoft/dotnet:2.0-sdk
     volumes:
-      - .:/app
+      - ./:/app
