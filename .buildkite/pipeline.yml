@@ -1,4 +1,20 @@
 steps:
+  - name: Test 1
+    command: ls .
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
+        workdir: /app
+
+  - name: Test 2
+    command: ls .
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
+        workdir: /app
+        volumes:
+          - ./:/app
+
   - name: Dotnet restore
     command: dotnet restore src/WebHello/WebHello.fsproj
     plugins:
