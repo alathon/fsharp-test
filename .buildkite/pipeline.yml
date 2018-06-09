@@ -4,5 +4,3 @@ steps:
     plugins:
       docker-compose#v2.4.0:
         run: app
-        volumes:
-          - .:/app
