@@ -6,4 +6,4 @@ steps:
         run: app
         workdir: /app
         volumes:
-          - ./:/app
+          - .:/app
