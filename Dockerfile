@@ -1,3 +1,4 @@
 FROM microsoft/dotnet:2.0-sdk
-COPY src /app
+RUN mkdir -p /app/src
+COPY src /app/src
 WORKDIR /app
