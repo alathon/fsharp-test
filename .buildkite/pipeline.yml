@@ -1,4 +1,12 @@
 steps:
+  - name: "Test"
+    command:
+      - ls /app
+      - ls .
+    plugins:
+      docker-compose#v2.4.0:
+        run: app
+
   - name: "Dotnet restore"
     command: "dotnet restore WebHello/WebHello.fsproj"
     plugins:
