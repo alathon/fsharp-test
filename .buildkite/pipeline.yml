@@ -1,14 +1,16 @@
 steps:
-  - name: "Test"
+  - name: "Dotnet restore"
     command:
-      - ls /app
-      - ls .
+      - "dotnet restore WebHello/WebHello.fsproj"
+      - "dotnet publish WebHello/WebHello.fsproj -o out -c Release --no-restore"
     plugins:
       docker-compose#v2.4.0:
         run: app
 
-  - name: "Dotnet restore"
-    command: "dotnet restore WebHello/WebHello.fsproj"
+  - wait
+
+  - name: "Dotnet publish"
+    command: "dotnet publish WebHello/WebHello.fsproj -o out -c Release --no-restore"
     plugins:
       docker-compose#v2.4.0:
         run: app
