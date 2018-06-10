@@ -5,4 +5,3 @@ services:
     image: microsoft/dotnet:2.0-sdk
     volumes:
       - ./src:/app
-    command: ls -al /app
