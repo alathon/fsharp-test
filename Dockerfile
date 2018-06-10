@@ -1,3 +1,3 @@
-FROM microsoft/dotnet:2.0-sdk
+FROM fsharp/netcore
 COPY src /app
 WORKDIR /app
