@@ -4,5 +4,5 @@ services:
   app:
     image: microsoft/dotnet:2.0-sdk
     volumes:
-      - /home/alathon/workspace/scaut/fsharp-test/src:/app
+      - ./src:/app
     command: ls -al /app
