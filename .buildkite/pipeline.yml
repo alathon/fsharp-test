@@ -5,4 +5,4 @@ steps:
       docker-compose#v2.4.0:
         run: app
         volumes:
-          - $PWD/src:/app
+          - $$PWD/src:/app
