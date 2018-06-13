@@ -1,16 +1,8 @@
 steps:
-  - name: "Dotnet restore"
-    command:
-      - "dotnet restore WebHello/WebHello.fsproj"
-      - "dotnet publish WebHello/WebHello.fsproj -o out -c Release --no-restore"
-    plugins:
-      docker-compose#v2.4.0:
-        run: app
+  - name: "NuGet restore"
+    command: "nix-shell . --run \"dotnet restore WebHello/WebHello.fsproj\""
 
   - wait
 
   - name: "Dotnet publish"
-    command: "dotnet publish WebHello/WebHello.fsproj -o out -c Release --no-restore"
-    plugins:
-      docker-compose#v2.4.0:
-        run: app
+    command: "nix-shell . --run \"dotnet publish WebHello/WebHello.fsproj -o out -c Release --no-restore\""
